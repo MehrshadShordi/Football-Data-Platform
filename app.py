@@ -23,45 +23,45 @@ def refresh_data():
             last_fetch = now
 
 
-# def refresh_data():
-#     global leagues, last_fetch, db_initialized
+def refresh_data():
+    global leagues, last_fetch, db_initialized
 
-#     try:
-#         if not db_initialized:
-#             init_db()
-#             db_initialized = True
+    try:
+        if not db_initialized:
+            init_db()
+            db_initialized = True
 
-#         cached = load_cache()
+        cached = load_cache()
 
-#     except Exception:
-#         app.logger.exception("Database read failed")
-#         return leagues
+    except Exception:
+        app.logger.exception("Database read failed")
+        return leagues
 
-#     if cached is not None:
-#         cached_leagues, fetched_at = cached
-#         leagues = cached_leagues
+    if cached is not None:
+        cached_leagues, fetched_at = cached
+        leagues = cached_leagues
 
-#         now = datetime.now(timezone.utc)
-#         age = (now - fetched_at).total_seconds()
+        now = datetime.now(timezone.utc)
+        age = (now - fetched_at).total_seconds()
 
-#         if age < refresh_interval:
-#             return leagues
+        if age < refresh_interval:
+            return leagues
 
-#     new_data = fetch_data()
+    new_data = fetch_data()
 
-#     if new_data is None:
-#         return leagues
+    if new_data is None:
+        return leagues
 
-#     try:
-#         save_cache(new_data)
-#         leagues = new_data
-#         last_fetch = time.time()
+    try:
+        save_cache(new_data)
+        leagues = new_data
+        last_fetch = time.time()
 
-#     except Exception:
-#         app.logger.exception("Database save failed")
-#         leagues = new_data
+    except Exception:
+        app.logger.exception("Database save failed")
+        leagues = new_data
 
-#     return leagues
+    return leagues
 
 
 @app.route("/")

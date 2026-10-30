@@ -48,7 +48,6 @@ async function LoadMatches() {
                 AwayTeamScore.textContent = `${match.home_score}`;
                 ResultDiv.appendChild(HomeTeamScore);
                 ResultDiv.appendChild(AwayTeamScore);
-                console.log("finished");
             } else if (match.started == true) {
                 const HomeTeamScore = document.createElement("h4");
                 HomeTeamScore.textContent = `${match.home_score}`;
@@ -59,17 +58,14 @@ async function LoadMatches() {
                 ResultDiv.appendChild(HomeTeamScore);
                 ResultDiv.appendChild(GameTime);
                 ResultDiv.appendChild(AwayTeamScore);
-                console.log("started");
             } else if (match.cancelled == true) {
                 const GameReason = document.createElement("h4");
                 GameReason.textContent = `${match.reason}`;
                 ResultDiv.appendChild(GameReason);
-                console.log("cancelled");
             } else {
                 const GameTime = document.createElement("h4");
                 GameTime.textContent = `${match.time}`;
                 ResultDiv.appendChild(GameTime);
-                console.log("not started");
             }
 
             const AwayNameDiv = document.createElement("div");
@@ -95,23 +91,6 @@ async function LoadMatches() {
             leagueCardElement.appendChild(MatchCardElement);
         }
         container.appendChild(leagueCardElement);
-
-
-
-        // const leagueTitle = document.createElement("h2");
-        // leagueTitle.textContent = league.league;
-
-        // leagueElement.appendChild(leagueTitle);
-
-        // for (const match of league.matches){
-        //     const matchElement = document.createElement("p");
-
-        //     matchElement.textContent = `${match.home} ${match.home_score} - ${match.away_score} ${match.away}`;
-
-        //     leagueElement.appendChild(matchElement);
-
-        // }
-        // container.appendChild(leagueElement);
     }
 
 }
