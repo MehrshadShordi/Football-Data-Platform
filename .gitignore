@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.git_corrupt/
+.venv/
+venv/
+.env

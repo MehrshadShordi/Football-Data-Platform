@@ -56,7 +56,9 @@ def fetch_data():
         ccode = leagues["ccode"]
         league_name = f'{ccode}-{leagues["name"]}'
         league_data = {
-            "league": league_name,
+            "league_full": league_name,
+            "league": leagues["name"],
+            "league_id" : leagues["primaryId"],
             "matches": [],
         }
 
@@ -64,7 +66,7 @@ def fetch_data():
             if matches["status"].get("reason"):
                 reason = matches["status"]["reason"]["long"]
             elif matches["status"].get("ongoing"):
-                reason = f'Live {matches["status"]["liveTime"]["short"]}'
+                reason = matches["status"]["liveTime"]["short"]
             elif matches["status"]["started"] == False:
                 reason = "Not Started"
             else:

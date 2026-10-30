@@ -5,12 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Results</title>
     <script src="{{ url_for('static',filename='js/app.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
-    <h1>Today's Matches</h1>
-    
-    <main id="matches_container"></main>
-    
-    <script src="{{ url_for('static',filename='js/app.js') }}"></script>
+    <div class="container">
+        <div class="header">
+            <div><a href="http://"><h3>Football</h3></a></div>
+            <div class="icon"><a href="http://"><img src="{{ url_for('static', filename='favicon.ico') }}"></a></div>
+        </div>
+        <div id="leagues">
+            <div class="league_card">
+                <div class="league">
+                    <img class="team_logo" src="https://images.fotmob.com/image_resources/logo/leaguelogo/87_small.png" alt="">
+                    <h4>premier league</h4>
+                </div>
+                <div class="match_card">
+                    <div>
+                        <img class="team_logo" src="https://images.fotmob.com/image_resources/logo/teamlogo/8535_xsmall.png">
+                        <h4 id="home_name">Man City</h4>
+                    </div>
+                    <div>
+                        <h4>0</h4>
+                        <h4>0</h4>
+                    </div>
+                    <div>
+                        <h4 id="away_name">Man Utd</h4>
+                        <img class="team_logo" src="https://images.fotmob.com/image_resources/logo/teamlogo/8535_xsmall.png" onerror="this.onerror=null;this.src='/static/default_team.png';">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main id="matches_container"></main>
+        <script src="{{ url_for('static',filename='js/app.js') }}"></script>
+    </div>
 </body>
 </html>

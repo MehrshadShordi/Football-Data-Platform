@@ -1,0 +1,127 @@
+@font-face {
+    font-family: "Inter";
+    src: url("/static/Inter.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    background-color: black;
+    height: auto;
+    color: white;
+    width: 700px;
+    background-color: #1616166d;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.header {
+    padding: 1% 6%;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    background-color: #1616166d;
+    margin-bottom: 25px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+.icon img {
+    height: 45px;
+    filter: grayscale(1);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#leagues {
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.league_card {
+    border-radius: 35px;
+    width: 90%;
+    /* background-color: rgb(45, 45, 45); */
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    border: 3px rgb(22, 22, 22) solid;
+
+}
+
+#league {
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: rgb(15, 15, 15);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+#league img {
+    width: 30px;
+    height: 30px;
+}
+
+#league h4 {
+    padding-left: 12px;
+}
+
+
+
+.match_card {
+    position: relative;
+    padding-top: 10px;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(22, 22, 22);
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.match_card div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}
+
+.match_card div h4 {
+    text-align: center;
+}
+
+.match_card:nth-child(n+3)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 70%;
+    border-top: 3px dashed rgb(12, 12, 12);
+
+}
+
+.team_logo {
+    width: 35px;
+    height: 35px;
+
+}
