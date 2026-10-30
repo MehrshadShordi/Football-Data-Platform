@@ -10,7 +10,7 @@ async function LoadMatches() {
         leagueCardElement.className = "league_card";
         const LeagueElement = document.createElement("div");
         LeagueElement.id = "league";
-        const LeagueNameElement = document.createElement("h4");
+        const LeagueNameElement = document.createElement("h5");
         const LeagueIconElement = document.createElement("img");
         LeagueIconElement.src = `https://images.fotmob.com/image_resources/logo/leaguelogo/${league.league_id}_small.png`;
         LeagueIconElement.className = "team_logo"
@@ -33,7 +33,7 @@ async function LoadMatches() {
                 this.src = '/static/default_team.png';
 
             };
-            const HomeTeamName = document.createElement("h4");
+            const HomeTeamName = document.createElement("h6");
             HomeTeamName.textContent = `${match.home}`;
             HomeImgDiv.appendChild(HomeTeamImg);
             HomeNameDiv.appendChild(HomeTeamName);
@@ -42,28 +42,28 @@ async function LoadMatches() {
 
             const ResultDiv = document.createElement("div");
             if (match.finished == "true") {
-                const HomeTeamScore = document.createElement("h4");
+                const HomeTeamScore = document.createElement("h6");
                 HomeTeamScore.textContent = `${match.home_score}`;
-                const AwayTeamScore = document.createElement("h4");
-                AwayTeamScore.textContent = `${match.home_score}`;
+                const AwayTeamScore = document.createElement("h6");
+                AwayTeamScore.textContent = `${match.away_score}`;
                 ResultDiv.appendChild(HomeTeamScore);
                 ResultDiv.appendChild(AwayTeamScore);
             } else if (match.started == true) {
-                const HomeTeamScore = document.createElement("h4");
+                const HomeTeamScore = document.createElement("h6");
                 HomeTeamScore.textContent = `${match.home_score}`;
-                const GameTime = document.createElement("h4");
+                const GameTime = document.createElement("h6");
                 GameTime.textContent = `${match.reason}`;
-                const AwayTeamScore = document.createElement("h4");
-                AwayTeamScore.textContent = `${match.home_score}`;
+                const AwayTeamScore = document.createElement("h6");
+                AwayTeamScore.textContent = `${match.away_score}`;
                 ResultDiv.appendChild(HomeTeamScore);
                 ResultDiv.appendChild(GameTime);
                 ResultDiv.appendChild(AwayTeamScore);
             } else if (match.cancelled == true) {
-                const GameReason = document.createElement("h4");
+                const GameReason = document.createElement("h6");
                 GameReason.textContent = `${match.reason}`;
                 ResultDiv.appendChild(GameReason);
             } else {
-                const GameTime = document.createElement("h4");
+                const GameTime = document.createElement("h6");
                 GameTime.textContent = `${match.time}`;
                 ResultDiv.appendChild(GameTime);
             }
@@ -78,7 +78,7 @@ async function LoadMatches() {
                 this.src = '/static/default_team.png';
 
             };
-            const AwayTeamName = document.createElement("h4");
+            const AwayTeamName = document.createElement("h6");
             AwayTeamName.textContent = `${match.away}`;
             AwayNameDiv.appendChild(AwayTeamName);
             AwayImgDiv.appendChild(AwayTeamImg);

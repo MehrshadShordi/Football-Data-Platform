@@ -20,10 +20,12 @@ body {
     height: auto;
     color: white;
     width: 700px;
+    width: auto;
     background-color: #1616166d;
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
 }
+
 
 .header {
     padding: 1% 6%;
@@ -35,6 +37,38 @@ body {
     margin-bottom: 25px;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar a {
+    padding: 0px 20px;
+}
+
+.date_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.date_container button {
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    background: none;
+}
+
+#selected-date {
+    border-radius: 12px;
+    color: white;
+    background: none;
+    border: 0;
 }
 
 .icon img {
@@ -82,7 +116,7 @@ a {
     height: 30px;
 }
 
-#league h4 {
+#league h5 {
     padding-left: 12px;
 }
 
@@ -91,7 +125,7 @@ a {
 .match_card {
     position: relative;
     padding-top: 10px;
-    height: 75px;
+    height: 55px;
     display: flex;
     justify-content: space-between;
     background-color: rgb(22, 22, 22);
@@ -106,7 +140,7 @@ a {
     width: 20%;
 }
 
-.match_card div h4 {
+.match_card div h6 {
     text-align: center;
 }
 
@@ -123,5 +157,26 @@ a {
 .team_logo {
     width: 35px;
     height: 35px;
+
+}
+
+
+@media (min-width:768px) {
+    .container {
+        width: 700px;
+    }
+
+    h5 {
+        font-size: 1em;
+    }
+
+    h6 {
+        font-size: .9em;
+        font-weight: 500;
+    }
+
+    .match_card {
+        height: 65px;
+    }
 
 }
